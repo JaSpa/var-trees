@@ -377,7 +377,7 @@ ext-bindLin σ (leafₐ x)    = id-sub _
 ext-bindLin σ (node s l r) (left p)  = ext-bindLin (σ ∘ left) l p
 ext-bindLin σ (node s l r) (right p) = ext-bindLin (σ ∘ right) r p
 
--- Apply a substitution to a lin binder. (?)
+-- Apply a substitution to a lin binder.
 sub·bindLin : ∀ {ts} (σ : Sub 𝓥) (b : bindLin ts ∈ 𝓤 —→ 𝓥) →
   bindLin ts ∈ 𝓥[ ext-bindLin σ b ] —→ 𝓥[ σ ] 
 sub·bindLin σ (leaf₋ refl) = allOf[] refl
